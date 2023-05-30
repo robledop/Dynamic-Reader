@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest">
+  <!--<Identity Name="4dac9b88-6332-472d-83ae-9000f097d864" Publisher="CN=Robledo" Version="1.0.0.0" />-->
+  <Identity Name="28757RobledoPazotto.DynamicReader" Publisher="CN=B81818E7-C738-4A9B-9394-8BEB398ACF4E" Version="3.0.0.0" />
+  <Properties>
+    <DisplayName>Dynamic Reader</DisplayName>
+    <PublisherDisplayName>Robledo Pazotto</PublisherDisplayName>
+    <Logo>Assets\StoreLogo.png</Logo>
+  </Properties>
+  <Prerequisites>
+    <OSMinVersion>6.3.0</OSMinVersion>
+    <OSMaxVersionTested>6.3.0</OSMaxVersionTested>
+  </Prerequisites>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="Dynamic_Reader.App">
+      <m2:VisualElements DisplayName="Dynamic Reader" Square150x150Logo="Assets\Square150.png" Square30x30Logo="Assets\SmallLogo.png" Description="Dynamic Reader" ForegroundText="dark" BackgroundColor="white">
+        <m2:DefaultTile ShortName="Dynamic Reader" Square310x310Logo="Assets\Square310.png" Wide310x150Logo="Assets\Wide310.png" Square70x70Logo="Assets\Square70.png">
+          <m2:ShowNameOnTiles>
+            <m2:ShowOn Tile="square150x150Logo" />
+            <m2:ShowOn Tile="wide310x150Logo" />
+            <m2:ShowOn Tile="square310x310Logo" />
+          </m2:ShowNameOnTiles>
+        </m2:DefaultTile>
+        <m2:SplashScreen Image="Assets\SplashScreen.png" BackgroundColor="white" />
+        <m2:InitialRotationPreference>
+          <m2:Rotation Preference="portrait" />
+          <m2:Rotation Preference="landscape" />
+          <m2:Rotation Preference="portraitFlipped" />
+          <m2:Rotation Preference="landscapeFlipped" />
+        </m2:InitialRotationPreference>
+        <m2:ApplicationView MinWidth="default" />
+      </m2:VisualElements>
+      <Extensions>
+        <Extension Category="windows.fileOpenPicker">
+          <FileOpenPicker>
+            <SupportedFileTypes>
+              <FileType>.epub</FileType>
+              <FileType>.txt</FileType>
+              <FileType>.book</FileType>
+              <FileType>.pdf</FileType>
+              <FileType>.fb2</FileType>
+            </SupportedFileTypes>
+          </FileOpenPicker>
+        </Extension>
+        <Extension Category="windows.fileTypeAssociation">
+          <FileTypeAssociation Name="dynamicreader">
+            <DisplayName>Dynamic Reader</DisplayName>
+            <Logo>Assets\Square150.png</Logo>
+            <EditFlags OpenIsSafe="true" />
+            <SupportedFileTypes>
+              <FileType>.epub</FileType>
+              <FileType>.txt</FileType>
+              <FileType>.pdf</FileType>
+              <FileType>.book</FileType>
+            </SupportedFileTypes>
+          </FileTypeAssociation>
+        </Extension>
+      </Extensions>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="internetClient" />
+    <Capability Name="removableStorage" />
+  </Capabilities>
+</Package>

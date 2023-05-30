@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="SharedProjectFile_SccProperties">
+    <SharedProjectFile_ProjectGuid>{48a71a12-e33b-4679-9153-f16ca7d5fcd3}</SharedProjectFile_ProjectGuid>
+    <SharedProjectFile_SccProjectName>SAK</SharedProjectFile_SccProjectName>
+    <SharedProjectFile_SccAuxPath>SAK</SharedProjectFile_SccAuxPath>
+    <SharedProjectFile_SccLocalPath>SAK</SharedProjectFile_SccLocalPath>
+    <SharedProjectFile_SccProvider>SAK</SharedProjectFile_SccProvider>
+  </PropertyGroup>
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>a61131c8-3b8a-4497-a702-3b3772678154</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>Dynamic_Reader</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)Assets\projectgutenberg.jpg" />
+    <Content Include="$(MSBuildThisFileDirectory)Fonts\Anonymous.ttf" />
+    <Content Include="$(MSBuildThisFileDirectory)Fonts\DroidSansMono.ttf" />
+    <Content Include="$(MSBuildThisFileDirectory)Fonts\LiveSymbol.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Common\DynamicReaderBookNotFoundException.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Common\DynamicReaderPathTooLongException.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Common\NavigationHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Common\ObservableDictionary.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Common\PageOrientations.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Common\RelayCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Common\SuspensionManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Common\SuspensionManagerException.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\AppBarHint.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\BookmarksControl.xaml.cs">
+      <DependentUpon>BookmarksControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\CustomTextBlock.xaml.cs">
+      <DependentUpon>CustomTextBlock.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\SettingsControl.xaml.cs">
+      <DependentUpon>SettingsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\TableOfContentsControl.xaml.cs">
+      <DependentUpon>TableOfContentsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\BookTitleConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\BooleanNegationConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\BooleanNegationToVisibilityConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\BooleanToHorizontalAlignmentConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\BooleanToVisibilityConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\CountToVisibilityConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Encodings\Windows1252Encoding.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\Extensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FB2Reader\Elements\AnnotationItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FB2Reader\Elements\AnnotationType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FB2Reader\Elements\AuthorItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FB2Reader\Elements\AuthorType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FB2Reader\Elements\BinaryItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FB2Reader\Elements\BodyItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FB2Reader\Elements\CiteItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FB2Reader\Elements\CustomTextFieldType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FB2Reader\Elements\DateItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FB2Reader\Elements\EmptyLineItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FB2Reader\Elements\EpigraphItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FB2Reader\Elements\FB2Const.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FB2Reader\Elements\FB2TextItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FB2Reader\Elements\GenreType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FB2Reader\Elements\ImageItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FB2Reader\Elements\InlineImageItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FB2Reader\Elements\InternalLinkItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FB2Reader\Elements\OutPutDocumentType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FB2Reader\Elements\ParagraphItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FB2Reader\Elements\PartShareInstructionType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FB2Reader\Elements\Poem\PoemItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FB2Reader\Elements\Poem\StanzaItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FB2Reader\Elements\Poem\VPoemParagraph.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FB2Reader\Elements\SectionItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FB2Reader\Elements\SequenceType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FB2Reader\Elements\ShareInstructionType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FB2Reader\Elements\SimpleText.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FB2Reader\Elements\StyleElement.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FB2Reader\Elements\SubTitleItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FB2Reader\Elements\Table\BaseCellElement.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FB2Reader\Elements\Table\TableCellItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FB2Reader\Elements\Table\TableHeadingItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FB2Reader\Elements\Table\TableItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FB2Reader\Elements\Table\TableRowItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FB2Reader\Elements\TextAuthorItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FB2Reader\Elements\TextFieldType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FB2Reader\Elements\TitleItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FB2Reader\FB2File.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FB2Reader\HeaderItems\CoverPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FB2Reader\HeaderItems\CustomInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FB2Reader\HeaderItems\ItemDocumentInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FB2Reader\HeaderItems\ItemInfoBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FB2Reader\HeaderItems\ItemPublishInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FB2Reader\HeaderItems\ItemTitleInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\DebugReporter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\FileHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\GridViewHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\HtmlHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\SerializationHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\SettingsHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\ZipHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IDataService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IDialogService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IImporter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\INavigationService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ISdCardService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ObfuscationAttributes.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\Book.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\Bookmark.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\BookToImport.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\Chapter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\ChapterFile.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Readers\BookReader.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Readers\EpubReader.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Readers\Fb2Reader.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Readers\MyPdfReader.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Readers\TxtReader.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\BookImporter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\DataService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\DialogService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\NavigationService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\SdCardService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Util\Globals.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Util\Helper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\BookViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\MainViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\ViewModelLocator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\About.xaml.cs">
+      <DependentUpon>About.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\AppSettingsFlyout.xaml.cs">
+      <DependentUpon>AppSettingsFlyout.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Bookmarks.xaml.cs">
+      <DependentUpon>Bookmarks.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\ImportBooksFlyout.xaml.cs">
+      <DependentUpon>ImportBooksFlyout.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Library.xaml.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\ReadingView.xaml.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\SearchResultsPage.xaml.cs">
+      <DependentUpon>SearchResultsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\StartPage.xaml.cs">
+      <DependentUpon>StartPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\TableOfContentsFlyout.xaml.cs">
+      <DependentUpon>TableOfContentsFlyout.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="$(MSBuildThisFileDirectory)App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+    <Page Include="$(MSBuildThisFileDirectory)Controls\BookmarksControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Controls\CustomTextBlock.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Controls\SettingsControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Controls\TableOfContentsControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Theme\AppBarHint.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\About.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\AppSettingsFlyout.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\Bookmarks.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\ImportBooksFlyout.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\SearchResultsPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\StartPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\TableOfContentsFlyout.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

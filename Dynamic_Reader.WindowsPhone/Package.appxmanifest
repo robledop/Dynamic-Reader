@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest" xmlns:m3="http://schemas.microsoft.com/appx/2014/manifest" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest">
+  <Identity Name="28757RobledoPazotto.DynamicReaderBeta" Publisher="CN=B81818E7-C738-4A9B-9394-8BEB398ACF4E" Version="1.1.0.14" />
+  <mp:PhoneIdentity PhoneProductId="3f972a1b-9a59-47d9-a8b6-a57dfce0a2b7" PhonePublisherId="399e9e37-4154-4747-b913-568b86ca08f0" />
+  <Properties>
+    <DisplayName>Dynamic Reader Beta</DisplayName>
+    <PublisherDisplayName>Robledo Pazotto</PublisherDisplayName>
+    <Logo>Assets\StoreLogo.png</Logo>
+  </Properties>
+  <Prerequisites>
+    <OSMinVersion>6.3.1</OSMinVersion>
+    <OSMaxVersionTested>6.3.1</OSMaxVersionTested>
+  </Prerequisites>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="Dynamic_Reader.App">
+      <m3:VisualElements DisplayName="Dynamic Reader Beta" Square150x150Logo="Assets\Logo.png" Square44x44Logo="Assets\SmallLogo.png" Description="Dynamic_Reader.WindowsPhone" ForegroundText="light" BackgroundColor="transparent" ToastCapable="true">
+        <m3:DefaultTile Wide310x150Logo="Assets\WideLogo.png" Square71x71Logo="Assets\Square71x71Logo.png">
+          <m3:ShowNameOnTiles>
+            <m3:ShowOn Tile="square150x150Logo" />
+            <m3:ShowOn Tile="wide310x150Logo" />
+          </m3:ShowNameOnTiles>
+        </m3:DefaultTile>
+        <m3:SplashScreen Image="Assets\SplashScreen.png" BackgroundColor="white" />
+        <m3:InitialRotationPreference>
+          <m3:Rotation Preference="portrait" />
+          <m3:Rotation Preference="landscape" />
+          <m3:Rotation Preference="landscapeFlipped" />
+        </m3:InitialRotationPreference>
+      </m3:VisualElements>
+      <Extensions>
+        <Extension Category="windows.fileOpenPicker">
+          <FileOpenPicker>
+            <SupportedFileTypes>
+              <FileType>.epub</FileType>
+              <FileType>.txt</FileType>
+              <FileType>.book</FileType>
+              <FileType>.pdf</FileType>
+              <FileType>.fb2</FileType>
+            </SupportedFileTypes>
+          </FileOpenPicker>
+        </Extension>
+        <Extension Category="windows.fileTypeAssociation">
+          <FileTypeAssociation Name="dynamicreader">
+            <DisplayName>Dynamic Reader</DisplayName>
+            <Logo>Assets\Square71x71Logo.png</Logo>
+            <SupportedFileTypes>
+              <FileType ContentType="application/zip">.epub</FileType>
+              <FileType>.pdf</FileType>
+              <FileType>.book</FileType>
+              <FileType>.fb2</FileType>
+            </SupportedFileTypes>
+          </FileTypeAssociation>
+        </Extension>
+      </Extensions>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="internetClientServer" />
+    <Capability Name="removableStorage" />
+  </Capabilities>
+</Package>

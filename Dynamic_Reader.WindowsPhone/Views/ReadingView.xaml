@@ -1,0 +1,173 @@
+﻿<Page xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	  xmlns:controls="using:Dynamic_Reader.Controls"
+	  x:Class="Dynamic_Reader.Views.ReadingView"
+	  DataContext="{Binding Book, Source={StaticResource Locator}}"
+	  mc:Ignorable="d">
+	<Page.BottomAppBar>
+		<CommandBar>
+			<CommandBar.PrimaryCommands>
+				<AppBarButton x:Uid="Back"
+							  Icon="Back"
+							  Label="Back"
+							  Command="{Binding GoPreviousCommand}" />
+
+				<AppBarButton x:Uid="Forward"
+							  Icon="Forward"
+							  Label="Forward"
+							  Command="{Binding GoNextCommand}" />
+
+				<AppBarButton x:Uid="Speed"
+							  Label="Speed"
+							  Icon="PostUpdate" />
+
+				<AppBarButton x:Uid="Continue"
+							  Icon="Play"
+							  Label="Continue"
+							  IsEnabled="{Binding BookReader.BookLoading, Converter={StaticResource BooleanNegationConverter}}"
+							  Click="Continue_Click" />
+			</CommandBar.PrimaryCommands>
+			<CommandBar.SecondaryCommands>
+				<AppBarButton Icon="AlignLeft"
+							  Label="Table of Contents"
+							  IsEnabled="{Binding BookReader.BookLoading, Converter={StaticResource BooleanNegationConverter}}">
+					<AppBarButton.Flyout>
+						<Flyout>
+							<controls:TableOfContentsControl Margin="20" />
+						</Flyout>
+					</AppBarButton.Flyout>
+				</AppBarButton>
+
+				<AppBarButton x:Uid="Settings"
+							  Icon="Setting"
+							  Label="Settings"
+							  DataContext="{Binding Main, Source={StaticResource Locator}}">
+					<AppBarButton.Flyout>
+						<Flyout>
+							<controls:SettingsControl Margin="20" />
+						</Flyout>
+					</AppBarButton.Flyout>
+				</AppBarButton>
+				<AppBarButton x:Uid="Bookmarks"
+							  Icon="Bookmarks"
+							  Label="Bookmarks">
+					<AppBarButton.Flyout>
+						<Flyout>
+							<controls:BookmarksControl Margin="20" />
+						</Flyout>
+					</AppBarButton.Flyout>
+				</AppBarButton>
+				<AppBarButton x:Uid="AddBookmark"
+							  Icon="Favorite"
+							  Label="Add Bookmark"
+							  Command="{Binding BookmarkCommand}" />
+			</CommandBar.SecondaryCommands>
+		</CommandBar>
+	</Page.BottomAppBar>
+
+	<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+		  Tapped="Grid_Tapped">
+
+		<Grid.RowDefinitions>
+			<RowDefinition Height="auto" />
+			<RowDefinition Height="*" />
+			<RowDefinition Height="auto" />
+		</Grid.RowDefinitions>
+		<StackPanel Grid.Row="0">
+			<TextBlock x:Name="textBlock"
+					   Text="{Binding BookReader.CurrentBook.Title}"
+					   FontSize="15"
+					   Margin="24,0" />
+			<TextBlock x:Name="TimeTillTheEndOfChapter"
+					   Text="{Binding BookReader.TimeLeft}"
+					   FontSize="15"
+					   Margin="24,0" />
+			<TextBlock Margin="24,0"
+					   FontSize="15">
+				<Run Text="Percent read: " />
+				<Run Text="{Binding BookReader.CurrentBook.PercentageRead}" />
+				<Run Text="%" />
+			</TextBlock>
+			<Slider x:Name="BookPositionSlider"
+					SmallChange="1"
+					FontSize="15"
+					Value="{Binding BookReader.CurrentBook.WordsRead, Mode=TwoWay}"
+					Minimum="0"
+					Maximum="{Binding BookReader.CurrentBook.TotalNumberOfWords}"
+					Margin="24,0" />
+		</StackPanel>
+
+		<Grid x:Name="TextGrid"
+			  Grid.Row="1"
+			  Visibility="{Binding BookReader.BookLoading, Converter={StaticResource BooleanNegationToVisibilityConverter}, Mode=OneWay}">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="*" />
+				<RowDefinition Height="auto" />
+				<RowDefinition Height="*" />
+			</Grid.RowDefinitions>
+
+			<TextBlock x:Name="PreviousText"
+					   Text="{Binding BookReader.PreviousText}"
+					   TextWrapping="Wrap"
+					   FontSize="15"
+					   Visibility="Collapsed"
+					   Margin="24,0"
+					   HorizontalAlignment="Left"
+					   VerticalAlignment="Bottom"
+					   Grid.Row="0" />
+
+			<controls:CustomTextBlock x:Name="CurrentTextBlock"
+									  Grid.Row="1"
+									  Height="auto"
+									  Width="auto"
+									  SizeChanged="CurrentTextBlock_OnSizeChanged"
+									  VerticalAlignment="Center"
+									  HorizontalAlignment="{Binding Settings.EnableOrp, Converter={StaticResource BooleanToHorizontalAlignment}}"
+									  OrpEnabled="{Binding Settings.EnableOrp, Mode=OneWay}"
+									  DisplayGuides="{Binding Settings.DisplayGuides, Mode=OneWay}"
+									  FontType="{Binding Settings.FontType, Mode=OneWay}"
+									  FontSize="{Binding Settings.FontSize, Mode=OneWay}"
+									  TextValue="{Binding BookReader.CurrentText, Mode=OneWay}"
+									  Visibility="{Binding BookReader.BookLoading, Converter={StaticResource BooleanNegationToVisibilityConverter}}" />
+
+			<TextBlock x:Name="NextText"
+					   Text="{Binding BookReader.NextText}"
+					   FontSize="15"
+					   TextWrapping="Wrap"
+					   Visibility="Collapsed"
+					   HorizontalAlignment="Left"
+					   VerticalAlignment="Top"
+					   Margin="24,0"
+					   Grid.Row="2" />
+		</Grid>
+
+		<ProgressRing Grid.RowSpan="3"
+					  Grid.Row="0"
+					  Height="50"
+					  Width="50"
+					  IsActive="True"
+					  Visibility="{Binding BookReader.BookLoading, Converter={StaticResource BooleanToVisibilityConverter}, Mode=OneWay}" />
+
+		<StackPanel Grid.Row="2"
+					x:Name="Controls"
+					VerticalAlignment="Bottom">
+			<StackPanel Orientation="Horizontal"
+						Margin="24,0">
+				<TextBlock Text="words per minute: "
+						   FontSize="15" />
+				<TextBlock x:Name="Wpm"
+						   FontSize="15"
+						   Text="{Binding Settings.WordsPerMinute, Mode=OneWay}" />
+			</StackPanel>
+			<Slider x:Name="Slider"
+					Minimum="100"
+					Maximum="1000"
+					FontSize="15"
+					Margin="24,0"
+					Value="{Binding Settings.WordsPerMinute, Mode=TwoWay}"
+					SmallChange="1" />
+		</StackPanel>
+	</Grid>
+</Page>

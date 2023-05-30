@@ -1,0 +1,92 @@
+﻿<UserControl
+    x:Class="Dynamic_Reader.Controls.CustomTextBlock"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="400">
+
+    <StackPanel x:Name="LayoutRoot">
+
+        <StackPanel Orientation="Horizontal"
+                    Margin="{Binding TextMargin}">
+
+            <StackPanel>
+                <Path Margin="0,12,0,12"
+                      Visibility="{Binding DisplayGuides, Converter={StaticResource BooleanToVisibilityConverter}}"
+                      Width="24"
+                      Height="10"
+                      Stretch="Fill" />
+
+                <TextBlock Name="StartRun"
+                           FontFamily="{Binding FontFamily}"
+                           FontSize="{Binding FontSize}"
+                           TextTrimming="None"
+                           TextWrapping="NoWrap" />
+
+                <Path Margin="0,6,0,12"
+                      Visibility="{Binding DisplayGuides, Converter={StaticResource BooleanToVisibilityConverter}}"
+                      Width="24"
+                      Height="10"
+                      Stretch="Fill" />
+            </StackPanel>
+
+            <StackPanel>
+
+                <Path Margin="0,12,0,12"
+                      Visibility="{Binding DisplayGuides, Converter={StaticResource BooleanToVisibilityConverter}}"
+                      Width="24"
+                      Height="10"
+                      Stretch="Fill"
+                      StrokeLineJoin="Round"
+                      Stroke="#FF000000"
+                      Fill="#FFE40505"
+                      Data="F1 M 384.693,76.9103C 373.746,77.7835 362.798,78.6567 351.846,79.4638C 340.895,80.2709 329.938,81.012 318.978,81.6871C 308.018,82.362 297.053,82.9709 286.089,83.5799C 274.922,82.9099 263.754,82.2397 252.583,81.6364C 241.411,81.0331 230.236,80.4965 219.058,80.0266C 207.879,79.5566 196.698,79.1535 185.516,78.7504C 191.746,87.7946 197.976,96.8388 204.151,105.92C 210.326,115.001 216.446,124.119 222.511,133.273C 228.575,142.428 234.585,151.618 240.594,160.809C 245.598,170.816 250.601,180.822 255.664,190.798C 260.728,200.775 265.85,210.721 271.033,220.637C 276.215,230.553 281.457,240.438 286.698,250.323C 291.416,240.406 296.133,230.488 300.91,220.6C 305.687,210.712 310.524,200.853 315.419,191.023C 320.315,181.194 325.27,171.394 330.224,161.595C 336.388,152.258 342.552,142.922 348.661,133.549C 354.769,124.176 360.821,114.766 366.817,105.32C 372.814,95.8744 378.753,86.3923 384.693,76.9103 Z "
+                      UseLayoutRounding="False" />
+
+                <TextBlock Name="PivotRun"
+                           FontFamily="{Binding FontFamily}"
+                           FontSize="{Binding FontSize}"
+                           Foreground="Red" />
+
+                <Path Width="24"
+                      Height="10"
+                      Margin="0,6,0,12"
+                      Visibility="{Binding DisplayGuides, Converter={StaticResource BooleanToVisibilityConverter}}"
+                      Stretch="Fill"
+                      StrokeLineJoin="Round"
+                      Stroke="#FF000000"
+                      Fill="#FFE40505"
+                      Data="F1 M 384.693,76.9103C 373.746,77.7835 362.798,78.6567 351.846,79.4638C 340.895,80.2709 329.938,81.012 318.978,81.6871C 308.018,82.362 297.053,82.9709 286.089,83.5799C 274.922,82.9099 263.754,82.2397 252.583,81.6364C 241.411,81.0331 230.236,80.4965 219.058,80.0266C 207.879,79.5566 196.698,79.1535 185.516,78.7504C 191.746,87.7946 197.976,96.8388 204.151,105.92C 210.326,115.001 216.446,124.119 222.511,133.273C 228.575,142.428 234.585,151.618 240.594,160.809C 245.598,170.816 250.601,180.822 255.664,190.798C 260.728,200.775 265.85,210.721 271.033,220.637C 276.215,230.553 281.457,240.438 286.698,250.323C 291.416,240.406 296.133,230.488 300.91,220.6C 305.687,210.712 310.524,200.853 315.419,191.023C 320.315,181.194 325.27,171.394 330.224,161.595C 336.388,152.258 342.552,142.922 348.661,133.549C 354.769,124.176 360.821,114.766 366.817,105.32C 372.814,95.8744 378.753,86.3923 384.693,76.9103 Z "
+                      UseLayoutRounding="False"
+                      RenderTransformOrigin="0.5,0.5">
+                    <Path.RenderTransform>
+                        <CompositeTransform ScaleY="-1"
+                                            ScaleX="-1" />
+                    </Path.RenderTransform>
+                </Path>
+
+            </StackPanel>
+
+            <StackPanel>
+                <Path Margin="0,12,0,12"
+                      Visibility="{Binding DisplayGuides, Converter={StaticResource BooleanToVisibilityConverter}}"
+                      Width="24"
+                      Height="10"
+                      Stretch="Fill" />
+
+                <TextBlock Name="EndRun"
+                           FontFamily="{Binding FontFamily}"
+                           FontSize="{Binding FontSize}" />
+
+                <Path Margin="0,6,0,12"
+                      Visibility="{Binding DisplayGuides, Converter={StaticResource BooleanToVisibilityConverter}}"
+                      Width="24"
+                      Height="10"
+                      Stretch="Fill" />
+            </StackPanel>
+        </StackPanel>
+    </StackPanel>
+</UserControl>

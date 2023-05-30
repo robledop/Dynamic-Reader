@@ -1,0 +1,30 @@
+﻿<Application xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:viewModel="using:Dynamic_Reader.ViewModel"
+			 xmlns:converters="using:Dynamic_Reader.Converters"
+			 mc:Ignorable="d"
+			 x:Class="Dynamic_Reader.App"
+			 >
+
+	<Application.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="Theme/AppBarHint.xaml" />
+			</ResourceDictionary.MergedDictionaries>
+
+			<viewModel:ViewModelLocator x:Key="Locator" />
+
+			<x:String x:Key="AppName">Dynamic Reader</x:String>
+
+			<converters:BookTitleConverter x:Key="BookTitleConverter"/>
+			<converters:CountToVisibilityConverter x:Key="CountToVisibilityConverter"/>
+			<converters:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+			<converters:BooleanNegationConverter x:Key="BooleanNegationConverter" />
+			<converters:BooleanToHorizontalAlignmentConverter x:Key="BooleanToHorizontalAlignment" />
+			<converters:BooleanNegationToVisibilityConverter x:Key="BooleanNegationToVisibilityConverter" />
+		</ResourceDictionary>
+	</Application.Resources>
+
+</Application>
